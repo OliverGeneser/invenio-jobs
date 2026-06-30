@@ -5,7 +5,7 @@
  */
 
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 
 import { RunsLogs } from "./RunsLogs";
 
@@ -16,8 +16,7 @@ if (detailsConfig) {
   const run = JSON.parse(detailsConfig.dataset.run);
   const sort = JSON.parse(detailsConfig.dataset.sort);
   const warnings = JSON.parse(detailsConfig.dataset.warnings || "[]");
-  ReactDOM.render(
-    <RunsLogs logs={logs} run={run} sort={sort} warnings={warnings} />,
-    detailsConfig
+  createRoot(detailsConfig).render(
+    <RunsLogs logs={logs} run={run} sort={sort} warnings={warnings} />
   );
 }

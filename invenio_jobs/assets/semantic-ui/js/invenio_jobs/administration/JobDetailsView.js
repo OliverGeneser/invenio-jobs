@@ -12,7 +12,7 @@ import { createSearchAppInit } from "@js/invenio_search_ui";
 import { RunActionForm } from "./RunActionForm";
 import _get from "lodash/get";
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { JobRunsHeader } from "./JobRunsHeader";
 import { JobSearchLayout } from "./JobSearchLayout";
 import { SearchResultItemLayout } from "./RunsSearchResultItemLayout";
@@ -61,7 +61,7 @@ const cmps = {
   "InvenioAdministration.ActionForm.runs.layout": RunActionForm,
 };
 detailsConfig &&
-  ReactDOM.render(
+  createRoot(detailsConfig).render(
     <OverridableContext.Provider value={cmps}>
       <AdminDetailsView
         title={title}
@@ -78,6 +78,5 @@ detailsConfig &&
         uiSchema={uiSchema}
         name={name}
       />
-    </OverridableContext.Provider>,
-    detailsConfig
+    </OverridableContext.Provider>
   );
