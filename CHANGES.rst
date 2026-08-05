@@ -8,6 +8,10 @@
 Changes
 =======
 
+Version v11.0.3 (released 2026-08-05)
+
+- fix: subtasks_closed db-side default
+
 Version v11.0.2 (released 2026-08-04)
 
 - fix(build): include mo files
